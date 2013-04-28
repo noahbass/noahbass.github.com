@@ -1,0 +1,79 @@
+::selection {
+  background: #237BA9;
+  text-shadow: none;
+  color: #FFF;
+}
+
+body {
+  padding-top: 140px;
+}
+
+header {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $hrBorder;
+  
+}
+
+.header {
+  @media (min-width: 768px) and (max-width: 979px) {
+    padding-bottom: 170px;
+  }
+  @media (max-width: 767px) {
+    padding-bottom: 20px;
+  }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  background: $white;
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+  @media (min-width: 940px) and (max-width: 1199px) {
+    width: 940px;
+  }
+  @media (min-width: 768px) and (max-width: 979px) {
+    width: 724px;
+  }
+  @media (max-width: 767px) {
+    position: static;
+  }
+}
+
+.ie {
+  & .fixed-top {
+    position: static;
+  }
+  & body {
+    padding: 0;
+  }
+}
+
+
+.resume {
+  & h4 {
+    margin: 0;
+  }
+}
+
+.well {
+  @include box-sizing(border-box);
+}
+
+footer {
+  padding-bottom: 10px;
+}
+
+.chromeframe {
+  margin: 0;
+  margin-top: 8px;
+  padding: 0;
+  & a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
