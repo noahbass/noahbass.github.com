@@ -16,7 +16,7 @@ header img {
   }
 }
 
-.well {
+.well, .well-small {
   @include box-sizing(border-box);
 }
 
