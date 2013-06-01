@@ -1,0 +1,14 @@
+{
+  "name": "noahbass",
+  "description": "Noah's site",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/noahbass/noahbass.github.com"
+  },
+  "keywords": [
+    "noah"
+  ],
+  "author": "Noah",
+  "license": "MIT"
+}
