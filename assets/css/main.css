@@ -685,8 +685,10 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-filter: contrast(300%);
-  filter: contrast(300%); }
+  height: 100%;
+  width: 100%;
+  -webkit-filter: contrast(150%);
+  filter: contrast(150%); }
   @media screen and (min-width: 1280px) {
     html {
       background: url(http://upload.wikimedia.org/wikipedia/commons/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg) no-repeat center center fixed;
@@ -704,7 +706,8 @@ html {
       -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg', sizingMethod='scale')"; } }
 
 .container {
-  -webkit-filter: contrast(0.35);
+  -webkit-filter: contrast(0.7);
+  filter: contrast(0.7);
   font-family: 'Droid Sans', sans-serif;
   width: 24em;
   position: fixed;
@@ -715,7 +718,7 @@ html {
   padding: 2em 0;
   text-align: center;
   background: black;
-  background: rgba(0, 0, 0, 0.85); }
+  background: rgba(0, 0, 0, 0.6); }
   .container header {
     color: #fff; }
     .container header h1 {
@@ -723,8 +726,7 @@ html {
       font-size: 60px;
       margin: 0; }
     .container header h2 {
-      font-weight: normal;
-      font-family: sans-serif; }
+      font-weight: normal; }
   .container .contact p {
     font-family: sans-serif;
     font-size: 17px; }
@@ -750,6 +752,7 @@ html {
 
 footer {
   -webkit-filter: contrast(0.35);
+  filter: contrast(0.35);
   position: fixed;
   bottom: 0;
   left: 0;

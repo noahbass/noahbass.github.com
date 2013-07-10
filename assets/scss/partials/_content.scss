@@ -3,8 +3,12 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-filter: contrast(300%);
-  filter: contrast(300%);
+  
+  height: 100%;
+  width: 100%;
+  
+  -webkit-filter: contrast(150%);
+  filter: contrast(150%);
   
   @media screen and (min-width: 1280px) {
     background: url(http://upload.wikimedia.org/wikipedia/commons/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg) no-repeat center center fixed;
@@ -23,12 +27,11 @@ html {
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg', sizingMethod='scale')";
   }
-  
 }
 
 .container {
-  -webkit-filter: contrast(0.35);
-  filter: contrast(0.35);
+  -webkit-filter: contrast(0.7);
+  filter: contrast(0.7);
   font-family: 'Droid Sans', sans-serif;
   
   width: 24em;
@@ -41,7 +44,7 @@ html {
   text-align: center;
   
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.6);
   
   header {
     color: #fff;
