@@ -1,52 +1,42 @@
-module.exports = function(grunt){
+/*global module:false*/
+module.exports = function(grunt) {
+
+  // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    less: {
-      production: {
+    // Metadata.
+    meta: {
+      version: '0.1.0'
+    },
+    banner: '/*! noahbass.com - v<%= meta.version %> - ' +
+      '<%= grunt.template.today("yyyy-mm-dd") %> ' +
+      'http://noahbass.com/ ' +
+      'Copyright (c) <%= grunt.template.today("yyyy") %> ' +
+      'Noah Bass; Licensed MIT */',
+    // Task configuration.
+    sass: {
+      dist: {
         files: {
-          "css/main.css": "less/bootstrap.less"
+          'assets/css/main.css': 'assets/scss/main.scss'
         }
       }
     },
     cssmin: {
-      options: {
-        banner: '/*! <%= pkg.name %> | Last build on <%= grunt.template.today("yyyy-mm-dd") %> | Source code at <%= pkg.repository.url %> */'
-      },
-      minify: {
-        src: ['css/main.css'],
-        dest: 'main.min.css'
-      }
-    },
-    concat: {
-      build: {
-        src: ['js/lib/bootstrap/*.js', 'js/lib/smoothscroll.js', 'js/lib/main.js'],
-        dest: 'js/main.js'
-      }
-    },
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> | Last build on <%= grunt.template.today("yyyy-mm-dd") %> | Source code at <%= pkg.repository.url %> */\n'
-      },
-      build: {
+      add_banner: {
+        options: {
+          banner: '<%= banner %>'
+        },
         files: {
-          'js/main.min.js': ['js/main.js']
+          'assets/css/main.min.css': ['assets/css/main.css']
         }
       }
-    },
-    watch: {
-      options: {
-        livereload: true
-      },
-      files: ['js/lib/bootstrap/*.js', 'js/lib/*.js', 'less/*.less', 'index.html'],
-      tasks: ["less", "cssmin", "concat", "uglify"]
     }
   });
-  
-  grunt.loadNpmTasks('grunt-contrib-less');
+
+  // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  
-  grunt.registerTask('default', ['concat', 'less', 'cssmin', 'uglify']);
+
+  // Default task.
+  grunt.registerTask('default', ['sass', 'cssmin']);
+
 };

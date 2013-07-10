@@ -1,14 +1,11 @@
 {
-  "name": "noahbass",
-  "description": "Noah's site",
-  "main": "index.html",
+  "name": "noahbass.com",
+  "version": "0.1.0",
+  "description": "noahs website",
   "repository": {
     "type": "git",
-    "url": "git://github.com/noahbass/noahbass.github.com"
+    "url": "https://github.com/noahbass/noahbass.github.io.git"
   },
-  "keywords": [
-    "noah"
-  ],
-  "author": "Noah",
+  "author": "Noah Bass",
   "license": "MIT"
 }
