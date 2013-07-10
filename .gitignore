@@ -1,4 +1,6 @@
-node_modules/
-css/
-js/main.js
-.allow-devtools-edit
+node_modules
+npm-debug.log
+
+.sass-cache
+
+.DS_Store
