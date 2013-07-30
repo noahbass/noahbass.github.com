@@ -685,9 +685,9 @@ html {
   filter: contrast(175%); }
   @media screen and (min-width: 640px) {
     html {
-      background: url(http://upload.wikimedia.org.nyud.net/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg) no-repeat center center fixed;
-      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.http://upload.wikimedia.org.nyud.net/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg', sizingMethod='scale');
-      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://upload.wikimedia.org.nyud.net/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg', sizingMethod='scale')"; } }
+      background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg) no-repeat center center fixed;
+      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg', sizingMethod='scale');
+      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/1024px-Cincinnati-skyline-from-kentucky-shore-night.jpg', sizingMethod='scale')"; } }
   @media screen and (max-width: 640px) {
     html {
       background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cincinnati-skyline-from-kentucky-shore-night.jpg/640px-Cincinnati-skyline-from-kentucky-shore-night.jpg) no-repeat center center fixed;
