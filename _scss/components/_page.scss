@@ -1,0 +1,6 @@
+@include location(home) {
+    body {
+        color: $color-white;
+        background-color: $color-blue-light;
+    }
+}

@@ -1,0 +1,37 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//staticflickr.com">
+
+<meta property="og:locale" content="en_us">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:url" content="http://noahbass.com/">
+<meta property="og:site_name" content="Noah Bass">
+<meta property="og:type" content="website">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}{{ site.meta.description }}{% endif %}">
+{% if page.path contains '_posts' %}
+    {% if page.img %}
+        <meta property="og:image" content="{{ page.img }}">
+    {% endif %}
+{% endif %}
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@{{ site.social.twitter }}">
+<meta name="twitter:domain" content="noahbass.com">
+<meta name="twitter:creator" content="@{{ site.social.twitter }}">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}{{ site.meta.description }}{% endif %}">
+{% if page.path contains '_posts' %}
+    {% if page.img %}
+        <meta name="twitter:image:src" content="{{ page.img }}">
+    {% else %}
+        <meta name="twitter:image" content="/logo.png">
+    {% endif %}
+{% endif %}
+
+<link rel="author" href="//plus.google.com/+{{ site.social.googleplus }}">
+
+<link rel="shortcut icon" href="{{ site.base_url }}/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="{{ site.base_url }}/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Noah Bass">

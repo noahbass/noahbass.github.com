@@ -1,0 +1,37 @@
+{% include head.html %}
+
+<article class="post --article">
+    {% if page.img %}
+    <div id="--background-image" class="section --background-image">
+        <div class="container">
+            <p id="post__time" class="post__time">{{ page.date | date: '%B %Y' }}</p>
+            <h1 id="post__h" class="post__h --hero h1">{{ page.title }}</h1>
+        </div>
+    </div>
+    {% else %}
+    <div class="section --no-background-image">
+        <div class="container">
+            <p class="post__time">{{ page.date | date: '%B %Y' }}</p>
+            <h1 class="post__h h1">{{ page.title }}</h1>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="section">
+        <div class="container">
+            {{ content }}
+
+            {% if page.img_credit %}
+                {% if page.img_link %}
+                    <p><small>Header image: <a href="{{ page.img_link }}">{{ page.img_credit }}</a></small></p>
+                {% else %}
+                    <p><small>Header image: {{ page.img_credit }}</small></p>
+                {% endif %}
+            {% endif %}
+
+            <!--<img class="footer__img" src="/apple-touch-icon.png" srcset="/apple-touch-icon.png 1x, /img/noah-mindbox.jpg 2x" alt="Noah Bass">-->
+        </div>
+    </div>
+</article>
+
+{% include footer.html %}

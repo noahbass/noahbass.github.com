@@ -1,0 +1,105 @@
+        </main>
+
+        {% if page.title contains 'Hello' %}
+            <p>homepage footer</p>
+        {% endif %}
+
+        <footer class="container page__footer">
+            <p><small>&copy; 2014</small></p>
+        </footer>
+
+        <script src="{{ site.base_url }}/js/scripts.js"></script>
+
+        {% if page.url contains 'posts' and page.img %}
+            <script>
+            var windowHeight = window.innerHeight,
+            metaHeight   = document.getElementById('post__h').clientHeight + document.getElementById('post__time').clientHeight + 30;
+            document.getElementById('--background-image').style.paddingTop = windowHeight - metaHeight + 'px';
+            </script>
+        {% endif %}
+
+        {% if page.url == '/posts/' %}
+            <script src="/js/lunr.min.js"></script>
+            <script>
+            var index = lunr(function() {
+                this.field('title', {
+                    boost: 10
+                })
+                this.field('body')
+                this.ref('id')
+            });
+
+            {% for post in site.posts %}
+            index.add({
+                id: {{ post.date | date: "%Y%m%d" }},
+                title: {{ post.title | jsonify }},
+                body: {{ post.description | jsonify }}
+            });
+            {% endfor %}
+
+            var posts = [];
+            for(var key in index.documentStore.store) {
+                posts.push(key);
+            };
+
+            function staticSearch(input) {
+                // set display: block; to all of the posts
+                posts.forEach(function(post) {
+                    document.getElementById(post).style.display = 'block';
+                });
+
+                // get the results and set the matches to zero
+                var results = index.search(input.value),
+                    matches = [];
+
+                results.forEach(function(result) {
+                    // get the ids of the posts that match the search and place them in the 'matches' array
+                    matches.push(result.ref);
+                });
+
+                posts.forEach(function(post) {
+                    // set display: none; to all of the posts
+                    document.getElementById(post).style.display = 'none';
+                });
+
+                if(matches.length === 0) {
+                    // no matches to the search
+                    document.getElementById('search-value').innerHTML = input.value;
+                    document.getElementById('search-no-results').style.display = 'block';
+                }
+                else {
+                    // set display: block; to all of the matches
+                    matches.forEach(function(match) {
+                        document.getElementById(match).style.display = 'block';
+                    });
+                }
+            };
+
+            function staticSearchReset() {
+                posts.forEach(function(post) {
+                    // set display: block; to all of the posts
+                    document.getElementById(post).style.display = 'block';
+                });
+
+                // hide the no results box
+                document.getElementById('search-no-results').style.display = 'none';
+            };
+
+            document.getElementById('search').onkeyup = function(event) {
+                var input = document.getElementById('search__input');
+
+                if(input.value.length === 1 || input.value.length === 0) {
+                    // there is no input
+                    staticSearchReset();
+                }
+                else {
+                    // there is an input, do search
+                    staticSearch(input);
+                }
+            };
+            </script>
+        {% endif %}
+
+        <script>!function(n,o,a,h,b){n.GoogleAnalyticsObject=a,n[a]||(n[a]=function(){(n[a].q=n[a].q||[]).push(arguments)}),n[a].l=+new Date,h=o.createElement('script'),b=o.scripts[0],h.src='//www.google-analytics.com/analytics.js',b.parentNode.insertBefore(h,b)}(this,document,'ga');ga('create','{{ site.meta.ga }}');ga('send','pageview');</script>
+    </body>
+</html>

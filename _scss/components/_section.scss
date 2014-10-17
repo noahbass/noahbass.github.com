@@ -1,0 +1,70 @@
+@include component(section) {
+    padding-left: 10px;
+    padding-left: 1.0rem;
+    padding-right: 10px;
+    padding-right: 1.0rem;
+
+
+    @include option(padding-top) {
+        padding-top: 60px;
+        padding-top: 6.0rem;
+    }
+
+
+    @include option(background-image) {
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include vendor(background-size, cover);
+        background-color: #666;
+
+
+        @include when($break-small) {
+            color: $color-black;
+            padding-top: 200px;
+            padding-bottom: 30px;
+
+
+            @include part(post__h) {
+                color: $color-black;
+            }
+        }
+
+        @include when($break-medium) {
+            padding-top: 250px;
+            padding-bottom: 30px;
+        }
+
+        @include when($break-large) {
+            padding-top: 350px;
+            padding-bottom: 30px;
+        }
+    }
+
+
+    @include option(no-background-image) {
+        padding-top: 70px;
+        padding-top: 7.0rem;
+    }
+
+
+    @include option(post-image) {
+        @include when($break-small) {
+            background-image: url('//farm3.staticflickr.com/2948/15254092789_7d63f6ed77.jpg');
+            padding-top: 40px;
+            padding-top: 40px;
+        }
+
+        @include when($break-medium) {
+            background-image: url('//farm3.staticflickr.com/2948/15254092789_7d63f6ed77_c.jpg');
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        @include when($break-large) {
+            background-image: url(/img/keyboard-effect.jpg);
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+    }
+
+}

@@ -1,0 +1,41 @@
+---
+layout: default
+title: Posts
+permalink: /posts/
+---
+
+<!--<section class="section --page-header section --background-image --post-image">
+    <div class="container">
+        <h1 class="h1 h--center">Posts</h1>
+    </div>
+</section>-->
+
+<section class="section --padding-top">
+    <div class="container">
+        <div class="search" id="search">
+            <input class="search__input" id="search__input" type="text" placeholder="search posts" autocomplete="off">
+        </div>
+
+        {% for post in site.posts %}
+            <article class="post" id="{{ post.date | date: "%Y%m%d" }}">
+                <p class="post__time">
+                    <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+                        {{ post.date | date: '%B %Y' }}
+                    </time>
+                </p>
+
+                <h2 class="h3 post__h"><a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a></h2>
+
+                <p class="post__excerpt">
+                    {% if post.description %}
+                        {{ post.description }}
+                    {% else %}
+                        {{ post.excerpt }}
+                    {% endif %}
+                </p>
+            </article>
+        {% endfor %}
+
+        <p style="display:none;" id="search-no-results">:( Could not find anything with your search of '<span id="search-value"></span>'.</p>
+    </div>
+</section>
