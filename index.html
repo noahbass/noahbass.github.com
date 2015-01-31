@@ -3,9 +3,27 @@ layout: default
 title: Hello
 ---
 
-<section class="section --header">
+<div class="@home">
+    <div class="table" id="home">
+        <section class="section --home --header --padding-top table__cell">
+            <div class="container">
+                <h1 class="h1 mt0 mb1">Noah Bass</h1>
+                <h2 class="h2 mt1 mb0">Web Developer in Cincinnati</h2>
+            </div>
+        </section>
+    </div>
+</div>
+
+<section class="section --home --footer --background-image">
     <div class="container">
-        <h1 class="h1">Noah Bass</h1>
-        <h2 class="h2 sm">Web Developer in the Cincinnati Area</h2>
+        <p class="mt0">I am very passionate about building the modern web, creating things that people love to use, and learning, exploring, and applying new technologies and ideas.</p>
+        <p class="mb0">
+            <small>
+                <a class="color-white" href="//linkedin.com/in/{{ site.social.linkedin }}">Linkedin</a> -
+                <a class="color-white" href="//github.com/{{ site.social.github }}">GitHub</a> -
+                <a class="color-white" href="//twitter.com/{{ site.social.twitter }}">Twitter</a> -
+                <a class="color-white" href="mailto:{{ site.social.email }}">{{ site.social.email }}</a>
+            </small>
+        </p>
     </div>
 </section>

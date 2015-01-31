@@ -1,5 +1,12 @@
-@mixin when($breakpoint){
+@mixin when($breakpoint) {
     @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+
+@mixin whenMax($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
@@ -14,88 +21,55 @@
 }
 
 
-// csstyle v1.1.0
-// Clean, Simple Styling for the Web
-// http://www.csstyle.io
-// Copyright (c) 2014 Dave Geddes
-// https://twitter.com/geddski
-// https://github.com/geddski
-
-// components
-@mixin component($name){
-    .#{$name}{
-        @content
-    }
+@mixin background-image($color, $opacity, $image) {
+    background: -webkit-linear-gradient(rgba($color, $opacity), rgba($color, $opacity)), url($image);
+    background:    -moz-linear-gradient(rgba($color, $opacity), rgba($color, $opacity)), url($image);
+    background:      -o-linear-gradient(rgba($color, $opacity), rgba($color, $opacity)), url($image);
+    background:         linear-gradient(rgba($color, $opacity), rgba($color, $opacity)), url($image);
 }
 
-// options
-// override components
-@mixin option($name) {
-    &.\--#{$name} {
-        @content;
-    }
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
 }
 
-// allow parts to respond to options on parents
-@mixin whenComponentOption($option){
-    $index: str-index(#{&}, "__") - 1;
-    $component: str-slice(#{&}, 0, $index);
 
-    #{$component}.\--#{$option} & {
-        @content;
-    }
+@mixin font-size($sizeValue: 1) {
+    $sizeValue: strip-units($sizeValue);
+
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / strip-units($font-size)) + rem;
 }
 
-// parts
-// make up the structure of a component
-// override components
-@mixin part($name){
-    // check if nested in an option
-    $optionIndex: str-index(#{&}, ".\\--");
-    $optionIndex: 0 !default;
-    $optionIndex: $optionIndex - 1;
 
-    // check if nested in another part
-    $partIndex: str-index(#{&}, "__");
-    $partIndex: 0 !default;
-    $partIndex: $partIndex - 1;
+@mixin em($property, $values, $unit: em) {
+    $max: length($values);
+    $pxValues: '';
+    $emValues: '';
 
-    $component: str-slice(#{&}, 0, $optionIndex);
+    @for $i from 1 through $max {
+        $value: strip-units(nth($values, $i));
+        $pxValues: #{$pxValues + $value}px;
 
-    // part is nested in an option
-    @if $optionIndex > 0 {
-        // part is also nested in another part
-        @if ($partIndex > 0){
-            &__#{$name}{
-                @content;
-            }
-        }
-        @else{
-            & #{$component}__#{$name}{
-                @content;
-            }
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
         }
     }
-    @else {
-        &__#{$name}{
-            @content
+
+    @for $i from 1 through $max {
+        $value: strip-units(nth($values, $i));
+        $emValues: #{$emValues + $value / strip-units($font-size)}$unit;
+
+        @if $i < $max {
+            $emValues: #{$emValues + " "};
         }
     }
-}
 
-// tweaks
-// override components, options, and modifiers
-@mixin tweak($name){
-    #csstyle .\+#{$name}{
-        @content;
-    }
+    #{$property}: $pxValues;
+    #{$property}: $emValues;
 }
 
 
-// locations
-// override components, parts, options, and tweaks
-@mixin location($name){
-    #csstyle .\@#{$name}{
-        @content;
-    }
+@mixin rem($property, $values) {
+    @include em($property, $values, rem);
 }

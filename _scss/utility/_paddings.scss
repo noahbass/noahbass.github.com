@@ -1,0 +1,55 @@
+.p1 {
+    @include rem(padding, $space-1);
+}
+
+.py1 {
+    @include rem(padding-top, $space-1);
+    @include rem(padding-bottom, $space-1);
+}
+
+.px1 {
+    @include rem(padding-left, $space-1);
+    @include rem(padding-right, $space-1);
+}
+
+.p2 {
+    @include rem(padding, $space-2);
+}
+
+.py2 {
+    @include rem(padding-top, $space-2);
+    @include rem(padding-bottom, $space-2);
+}
+
+.px2 {
+    @include rem(padding-left, $space-2);
+    @include rem(padding-right, $space-2);
+}
+
+.p3 {
+    @include rem(padding, $space-3);
+}
+
+.py3 {
+    @include rem(padding-top, $space-3);
+    @include rem(padding-bottom, $space-3);
+}
+
+.px3 {
+    @include rem(padding-left, $space-3);
+    @include rem(padding-right, $space-3);
+}
+
+.p4 {
+    @include rem(padding, $space-4);
+}
+
+.py4 {
+    @include rem(padding-top, $space-4);
+    @include rem(padding-bottom, $space-4);
+}
+
+.px4 {
+    @include rem(padding-left, $space-4);
+    @include rem(padding-right, $space-4);
+}

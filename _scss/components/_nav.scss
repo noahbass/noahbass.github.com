@@ -2,41 +2,40 @@
     position: absolute;
     top: 0;
     width: 100%;
-    background-color: rgba(#2c3e50, 0.2);
+    color: $color-blue-light;
 
 
-    @include component(nav) {
-        color: $color-white;
+    .nav {
+        .nav__section {
+            font-family: $font-family;
+            @include rem(margin, $nav-margin 0);
 
 
-        @include part(section) {
-            margin-top: 15px;
-            margin-top: 1.5rem;
-            margin-bottom: 15px;
-            margin-bottom: 1.5rem;
-
-
-            @include option(left) {
+            &.\--left {
                 float: left;
                 text-align: left;
+                font-weight: 400;
+
+
+                a {
+                    color: inherit;
+                }
             }
 
 
-            @include option(right) {
+            &.\--right {
                 float: right;
                 text-align: right;
 
 
                 a {
-                    margin-left: 15px;
-                    margin-left: 1.5rem;
+                    @include rem(margin-left, $nav-margin);
                     color: inherit;
                     text-decoration: none;
-                    @include vendor(transition, border-bottom 0.2s);
 
 
                     &:hover {
-                        border-bottom: 2px solid $color-white;
+                        border-bottom: 2px solid $color-blue-light;
                     }
                 }
             }
@@ -44,10 +43,8 @@
         }
 
 
-        @include part(h) {
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 18px;
-            font-size: 1.8rem;
+        .nav__h {
+            @include font-size($font-size);
 
 
             a {
@@ -58,7 +55,7 @@
             span {
                 display: none;
 
-                @include when($break-medium) {
+                @include when($break-small) {
                     display: inline-block;
                 }
             }
@@ -66,4 +63,18 @@
 
     }
 
+
+    &.\--home {
+        background-color: transparent;
+        color: $color-white;
+
+
+        .nav__section {
+            &.\--right {
+                a:hover {
+                    border-bottom-color: $color-white;
+                }
+            }
+        }
+    }
 }

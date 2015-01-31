@@ -1,0 +1,20 @@
+---
+layout: default
+title: Lab
+permalink: /lab/
+---
+
+<section class="section">
+    <div class="container">
+        <h1 class="section__h">Lab</h1>
+
+        <p>Experiments and demos</p>
+
+        {% for item in site.data.lab %}
+            <article class="post">
+                <p class="post__time"><time datetime="{{ item.date }}">{{ item.date | date: '%B %Y' }}</time></p>
+                <h2 class="h3 post__h"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></h2>
+            </article>
+        {% endfor %}
+    </div>
+</section>

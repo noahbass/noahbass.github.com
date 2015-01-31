@@ -1,0 +1,11 @@
+.table {
+    display: table;
+    width: 100%;
+
+
+    .table__cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+}

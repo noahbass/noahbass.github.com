@@ -1,40 +1,70 @@
-@include component(post) {
-    padding-top: 20px;
-    padding-bottom: 15px;
+.post {
+    @include rem(padding-top, 25px);
+    @include rem(padding-bottom, 15px);
 
 
-    @include part(time) {
+    .post__time {
         text-transform: uppercase;
         letter-spacing: 1px;
-        color: darken($color-white, 15%);
+        color: darken($color-white, 20%);
         font-size: 80%;
         margin-top: 0;
         margin-bottom: 3px;
     }
 
 
-    @include part(h) {
+    .post__h {
         margin-top: 3px;
         margin-bottom: 3px;
     }
 
 
-    @include part(excerpt) {
+    .post__excerpt {
         margin-top: 3px;
         margin-bottom: 0;
     }
 
 
-    @include option(article) {
+    .post__article {
         padding-top: 0;
 
 
-        @include part(h) {
+        .post__h {
             margin-top: 0;
 
-            @include option(hero) {
+            &.\--hero {
                 color: $color-white;
                 margin-top: 0;
+            }
+        }
+
+
+        .post__share {
+            width: 50%;
+            float: left;
+            text-transform: uppercase;
+            margin: 0;
+
+            &.\--right {
+                text-align: right;
+            }
+        }
+
+
+        hr,
+        .hr {
+            border: 0;
+            border-top: 5px solid $code-background-color;
+            @include rem(margin-top, 25px);
+
+
+            &.\--large {
+                @include rem(margin-top, 36px);
+            }
+
+
+            &.\--small {
+                @include rem(margin-top, 9px);
             }
         }
 
@@ -49,42 +79,18 @@
         }
 
 
-        h1 {
-            margin-top: 40px;
-            margin-top: 4.0rem;
-        }
-
-
-        h2 {
-            margin-top: 35px;
-            margin-top: 3.5rem;
-        }
-
-
-        h3 {
-            margin-top: 30px;
-            margin-top: 3.0rem;
-        }
-
-
-        h4 {
-            margin-top: 25px;
-            margin-top: 2.5rem;
-        }
-
-
         img,
-        iframe {
+        iframe,
+        video {
             max-width: 100%;
-
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
 
-            padding-top: 5px;
-            padding-top: 0.5rem;
-            padding-bottom: 5px;
-            padding-bottom: 0.5rem;
+
+        iframe {
+            @include rem(padding, 5px 0 5px 0);
         }
 
     }

@@ -1,20 +1,18 @@
 ---
 layout: post
 title: Local Domains in MAMP (Virtual Hosts)
-description: 'How to create virtual hosts with the free version of MAMP. Example: http://test.dev/.'
-img: //farm6.staticflickr.com/5599/15539576091_26cd41d315_b.jpg
-img_s: //farm6.staticflickr.com/5599/15539576091_26cd41d315_z.jpg
+description: 'How to create virtual hosts with the free version of MAMP. Example: <code>http://test.dev/</code>.'
 ---
 
 These intructions are for the free version of [MAMP](http://www.mamp.info/) for getting the virtual hosts functionality seen in MAMP Pro. I also have these instructions in a [video](http://youtu.be/QNX05ebHtKI).
 
 (This has been tested in version 2 and 3 of MAMP)
 
-## 1. Set MAMP's ports
+## Set MAMP's ports
 
 Open up MAMP, click on preferences, then go to the ports tab. Click "Set to defualt Apache and MySQL ports". Click okay and shutdown MAMP.
 
-## 2. Set the domain in the hosts
+## Set the domain in the hosts
 
 Open up a terminal and navigate to your root user directory. Then do these commands (you may have to use `sudo`):
 
@@ -25,15 +23,11 @@ $ nano hosts
 
 Look for the line that says:
 
-{% highlight bash %}
-$ 127.0.0.1 localhost
-{% endhighlight %}
+    127.0.0.1 localhost
 
 Add a space and then the name you would like to use. I'll use test.dev:
 
-{% highlight bash %}
-$ 127.0.0.1 localhost test.dev
-{% endhighlight %}
+    127.0.0.1 localhost test.dev
 
 Now save the document.
 
@@ -53,7 +47,7 @@ Now simply uncomment the line so it looks like:
 Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
 {% endhighlight %}
 
-## 3. Set the domain in the MAMP config
+## Set the domain in the MAMP config
 
 Unlike the MAMP Pro, the free version of MAMP does not have a gui for adding and removing custom domains (virtual hosts). There is an easy workaround though.
 
@@ -75,7 +69,7 @@ At the bottom of the document add this code for your custom doamin. Again, in th
 </VirtualHost>
 {% endhighlight %}
 
-## 4. Get MAMP and Chrome Running
+## Get MAMP and Chrome Running
 
 Now you can open MAMP and start up its servers.
 

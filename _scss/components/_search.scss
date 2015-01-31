@@ -1,62 +1,58 @@
-@include component(search) {
-    padding-top: 20px;
-    padding-top: 2.0rem;
-    padding-bottom: 15px;
-    padding-bottom: 1.5rem;
+.search {
+    @include rem(padding-top, 20px);
+    @include rem(padding-bottom, 15px);
 
 
-    @include part(input) {
+    .search__label {
+        position: absolute;
+        visibility: hidden;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+    }
+
+
+    .search__input {
         border: none;
         box-shadow: none;
         outline: 0;
-        font-size: 17px;
-        font-size: 1.7rem;
-        color: darken($color-white, 15%);
-        width: 100%;
+        @include font-size(17px);
+        color: darken($color-white, 20%);
+        width: calc(100% - 30px);
+        width: calc(100% - 1.667rem);
         -webkit-appearance: none;
 
-        background: url(/search.png) no-repeat -11.9px 40%;
-        background: url(/search.svg) no-repeat -11.9px 40%;
+        background: url(/img/icon-search/search.png) no-repeat -11.9px 40%;
+        background: url(/img/icon-search/search.svg) no-repeat -11.9px 40%;
 
-        padding-left: 30px;
-        padding-left: 3.0rem;
+        @include rem(padding-left, 30px);
 
         @include vendor(transition, all 300ms ease-in-out);
 
 
         &:focus {
-            background: url(/search-hover.svg) no-repeat -11.9px 40%;
+            background: url(/img/icon-search/search-hover.svg) no-repeat -11.9px 40%;
             color: darken($color-white, 50%);
         }
 
 
         &::-webkit-input-placeholder {
-            color: darken($color-white, 15%);
+            color: darken($color-white, 20%);
         }
 
 
         &:-moz-placeholder {
-            color: darken($color-white, 15%);
+            color: darken($color-white, 20%);
         }
 
 
         &::-moz-placeholder {
-            color: darken($color-white, 15%);
+            color: darken($color-white, 20%);
         }
 
 
         &:-ms-input-placeholder {
-            color: darken($color-white, 15%);
-        }
-
-
-        &::-moz-selection {
-            background: darken($color-white, 50%);
-        }
-
-
-        &::selection {
-            background: darken($color-white, 50%);
+            color: darken($color-white, 20%);
         }
     }
 

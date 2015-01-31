@@ -1,19 +1,15 @@
 html {
-    font-size: 62.5%;
-    font-family: 'Noto Sans', sans-serif;
+    font-size: $font-size;
+    font-family: $font-family;
     color: $color-black;
-}
 
 
-body {
-    margin: 0;
-    font-size: 16px;
-    font-size: 1.6rem;
-
+    @include whenMax($break-medium) {
+        font-size: 17px;
+    }
 
     @include when($break-large) {
         font-size: 18px;
-        font-size: 1.8rem;
     }
 }
 
@@ -26,11 +22,31 @@ a {
     &:hover {
         border-bottom: 2px solid $color-blue-light;
     }
+
+
+    &.color-white {
+        color: $color-white;
+
+
+        &:hover {
+            border-bottom: 2px solid $color-white;
+        }
+    }
+}
+
+
+small {
+    a {
+        &:hover {
+            border-bottom: 1px solid $color-blue-light;
+        }
+    }
 }
 
 
 p {
     line-height: 1.5;
+    @include em(margin, $p-margin 0);
 
 
     @include when($break-large) {
@@ -39,15 +55,13 @@ p {
 }
 
 
-::-moz-selection {
-    background: $color-blue-light;
-    color: $color-white;
-    text-shadow: none;
-}
+blockquote {
+    margin: 0;
 
-
-::selection {
-    background: $color-blue-light;
-    color: $color-white;
-    text-shadow: none;
+    p {
+        color: lighten($color-black, 40%);
+        font-style: italic;
+        border-left: 8px solid lighten($color-black, 40%);
+        padding: 8px 0 8px 16px;
+    }
 }

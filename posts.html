@@ -4,27 +4,31 @@ title: Posts
 permalink: /posts/
 ---
 
-<!--<section class="section --page-header section --background-image --post-image">
+<section class="section">
     <div class="container">
-        <h1 class="h1 h--center">Posts</h1>
-    </div>
-</section>-->
+        <h1 class="section__h">Posts</h1>
 
-<section class="section --padding-top">
-    <div class="container">
         <div class="search" id="search">
-            <input class="search__input" id="search__input" type="text" placeholder="search posts" autocomplete="off">
+            <label class="search__label" for="search__input">Search Posts</label>
+
+            <input class="search__input" id="search__input" name="search__input" type="text" placeholder="search posts" autocomplete="off">
         </div>
 
         {% for post in site.posts %}
-            <article class="post" id="{{ post.date | date: "%Y%m%d" }}">
+            <article class="post {% if layout == 'post-link' %}test{% endif %}" id="{{ post.date | date: "%Y%m%d" }}">
                 <p class="post__time">
                     <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
                         {{ post.date | date: '%B %Y' }}
                     </time>
                 </p>
 
-                <h2 class="h3 post__h"><a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a></h2>
+                <h2 class="h3 post__h">
+                    <a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a>
+
+                    {% if page.layout == 'post-link' %}
+                    <span class="label">Link</span>
+                    {% endif %}
+                </h2>
 
                 <p class="post__excerpt">
                     {% if post.description %}

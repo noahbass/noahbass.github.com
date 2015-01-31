@@ -1,0 +1,7 @@
+.label {
+    background-color: $code-background-color;
+    padding: 5px 5px 2px;
+    position: relative;
+    top: -1px;
+    @include vendor(border-radius, 3px);
+}

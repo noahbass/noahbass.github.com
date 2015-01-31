@@ -2,8 +2,6 @@
 layout: post
 title: Google Docs Spreadsheet Javascript Form Collection
 description: 'What if you wanted to use your own custom form on your own website without having to use embeding. Here is how to insert data from a form to a spreadsheet.'
-img: //farm6.staticflickr.com/5607/15542255335_934cd4e491_b.jpg
-img_s: //farm6.staticflickr.com/5607/15542255335_934cd4e491_z.jpg
 ---
 
 Some of the ideas in this post are based from [Martin Hawksey](http://mashe.hawksey.info/).

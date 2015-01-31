@@ -1,8 +1,9 @@
 meta:
     title: Noah Bass
-    description: Hi! My name is Noah and I'm a web designer and developer (I make websites) in Madeira (Cincinnati). I love the www.
+    description: Hi! My name is Noah and I'm a web designer and developer (I make websites) in Cincinnati. I love the www.
     ga: UA-41393710-1
 
+url: http://noahbass.com
 
 social:
     github: noahbass
@@ -11,7 +12,7 @@ social:
     email: hello@noahbass.com
     googleplus: NoahBass
 
-base_url: http://0.0.0.0:4000
+
 permalink: /posts/:title
 
 
