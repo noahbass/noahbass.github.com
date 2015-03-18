@@ -6,9 +6,9 @@
             </h1>
 
             <ul class="nav__section --right list-inline">
-                <li><a href="/">Hello</a></li>
-                <li><a href="/posts/">Posts</a></li>
-                <li><a href="/lab/">Lab</a></li>
+                {% assign pages_list = site.pages %}
+                {% assign group = 'navigation' %}
+                {% include nav_list.html %}
             </ul>
         </div>
     </nav>

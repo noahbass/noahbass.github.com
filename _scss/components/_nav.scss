@@ -34,6 +34,7 @@
                     text-decoration: none;
 
 
+                    &.active,
                     &:hover {
                         border-bottom: 2px solid $color-blue-light;
                     }
@@ -71,8 +72,12 @@
 
         .nav__section {
             &.\--right {
-                a:hover {
-                    border-bottom-color: $color-white;
+
+                a {
+                    &.active,
+                    a:hover {
+                        border-bottom-color: $color-white;
+                    }
                 }
             }
         }
