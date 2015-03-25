@@ -1,3 +1,19 @@
+- title: Spotify Search
+  link: https://noahbass.github.io/spotify-search/
+  date: 2015-03-01
+
+- title: Calvin and Hobbes Daily
+  link: https://noahbass.github.io/calvinhobbes-daily/
+  date: 2015-03-01
+
+- title: pijukebox-client
+  link: https://github.com/noahbass/pijukebox-client
+  date: 2015-02-01
+
+- title: smspolling
+  link: https://github.com/noahbass/smspolling
+  date: 2015-02-01
+
 - title: Laravel Smart URLs
   link: https://github.com/noahbass/smart-urls
   date: 2015-01-10
