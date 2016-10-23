@@ -1,8 +1,9 @@
-        </main>
-
-        {% if page.url == '/index.html' %}
-        <script>document.getElementById('home').style.height=window.innerHeight-50+'px';</script>
-        {% endif %}
+            </main>
+        </div>
+        
+        <footer>
+            <p><small>&copy; Noah Bass</small></p>
+        </footer>
 
         {% if page.codepen %}
             <script async src="//codepen.io/assets/embed/ei.js"></script>
@@ -16,6 +17,7 @@
             </script>
         {% endif %}
 
-        <script>!function(n,o,a,h,b){n.GoogleAnalyticsObject=a,n[a]||(n[a]=function(){(n[a].q=n[a].q||[]).push(arguments)}),n[a].l=+new Date,h=o.createElement('script'),b=o.scripts[0],h.src='//www.google-analytics.com/analytics.js',b.parentNode.insertBefore(h,b)}(this,document,'ga');ga('create','{{ site.meta.ga }}');ga('require','displayfeatures');ga('send','pageview');</script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        <script>window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;ga('create','{{ site.meta.ga }}','auto');ga('send','pageview')</script>
     </body>
 </html>

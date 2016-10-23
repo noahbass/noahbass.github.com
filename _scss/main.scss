@@ -1,25 +1,17 @@
 @import "variables";
-@import "mixins";
 
-@import "base/normalize";
 @import "base/container";
-
-@import "utility/box-sizing";
-@import "utility/margins";
-@import "utility/paddings";
-@import "utility/clearfix";
-
-@import "components/nav";
-@import "components/section";
-@import "components/home";
-@import "components/page";
-@import "components/post";
-@import "components/search";
-@import "components/figure";
-@import "components/table";
+@import "base/normalize";
 
 @import "type/base";
-@import "type/headings";
-@import "type/lists";
-@import "type/code";
 @import "type/syntax";
+@import "type/code";
+
+@import "components/page";
+@import "components/post";
+@import "components/hero";
+@import "components/nav";
+@import "components/search";
+@import "components/resume";
+@import "components/footer";
+@import "components/section";

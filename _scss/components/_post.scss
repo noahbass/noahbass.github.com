@@ -1,98 +1,47 @@
 .post {
-    @include rem(padding-top, 25px);
-    @include rem(padding-bottom, 15px);
-
-
+    margin-bottom: 25px;
+    
+    @media (min-width: $mobile-breakpoint) {
+        margin-bottom: 35px;
+    }
+    
     .post__time {
+        margin: 0;
+        margin-bottom: 14px;
+        font-size: 14px;
+        color: $color-gray;
         text-transform: uppercase;
         letter-spacing: 1px;
-        color: darken($color-white, 20%);
-        font-size: 80%;
-        margin-top: 0;
-        margin-bottom: 3px;
     }
-
-
-    .post__h {
-        margin-top: 3px;
-        margin-bottom: 3px;
-    }
-
-
-    .post__excerpt {
-        margin-top: 3px;
-        margin-bottom: 0;
-    }
-
-
-    .post__article {
-        padding-top: 0;
-
-
-        .post__h {
-            margin-top: 0;
-
-            &.\--hero {
-                color: $color-white;
-                margin-top: 0;
-            }
-        }
-
-
-        .post__share {
-            width: 50%;
-            float: left;
-            text-transform: uppercase;
+    
+    &.post--list-item {
+        .post__time {
             margin: 0;
-
-            &.\--right {
-                text-align: right;
+        }
+    }
+    
+    &.post--home {
+        margin-top: 25px;
+    }
+    
+    .post__header {
+        margin: 0;
+        
+        a {
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline;
             }
         }
-
-
-        hr,
-        .hr {
-            border: 0;
-            border-top: 5px solid $code-background-color;
-            @include rem(margin-top, 25px);
-
-
-            &.\--large {
-                @include rem(margin-top, 36px);
-            }
-
-
-            &.\--small {
-                @include rem(margin-top, 9px);
-            }
-        }
-
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-bottom: 0;
-        }
-
-
-        img,
-        iframe,
-        video {
-            max-width: 100%;
+    }
+    
+    .post__content {
+        div, video, figure, img {
             display: block;
             margin-left: auto;
             margin-right: auto;
+            max-width: 100%;
         }
-
-
-        iframe {
-            @include rem(padding, 5px 0 5px 0);
-        }
-
     }
-
 }

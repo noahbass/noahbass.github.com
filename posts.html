@@ -6,41 +6,29 @@ group: "navigation"
 ---
 
 <section class="section">
-    <div class="container">
-        <h1 class="section__h">Posts</h1>
+    <h1 class="section__header">Posts</h1>
 
-        <div class="search" id="search">
-            <label class="search__label" for="search__input">Search Posts</label>
-
-            <input class="search__input" id="search__input" name="search__input" type="text" placeholder="search posts" autocomplete="off">
-        </div>
-
-        {% for post in site.posts %}
-            <article class="post {% if layout == 'post-link' %}test{% endif %}" id="{{ post.date | date: "%Y%m%d" }}">
-                <p class="post__time">
-                    <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
-                        {{ post.date | date: '%B %Y' }}
-                    </time>
-                </p>
-
-                <h2 class="h3 post__h">
-                    <a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a>
-
-                    {% if page.layout == 'post-link' %}
-                    <span class="label">Link</span>
-                    {% endif %}
-                </h2>
-
-                <p class="post__excerpt">
-                    {% if post.description %}
-                        {{ post.description }}
-                    {% else %}
-                        {{ post.excerpt }}
-                    {% endif %}
-                </p>
-            </article>
-        {% endfor %}
-
-        <p style="display:none;" id="search-no-results">:( Could not find anything with your search of '<span id="search-value"></span>'.</p>
+    <div class="search" id="search">
+        <input class="search__input" id="search__input" name="search__input" type="text" placeholder="Search posts" autocomplete="off">
     </div>
+
+    {% for post in site.posts %}
+        <article class="post post--list-item" id="{{ post.date | date: "%Y%m%d" }}">
+            <p class="post__time">
+                <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+                    {{ post.date | date: '%B %Y' }}
+                </time>
+            </p>
+
+            <h2 class="post__header">
+                <a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a>
+
+                {% if page.layout == 'post-link' %}
+                <span class="label">Link</span>
+                {% endif %}
+            </h2>
+        </article>
+    {% endfor %}
+
+    <p class="search__no-results" id="search-no-results">:( Could not find anything with your search of '<span id="search-value"></span>'.</p>
 </section>

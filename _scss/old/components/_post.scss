@@ -1,0 +1,98 @@
+.post {
+    @include rem(padding-top, 25px);
+    @include rem(padding-bottom, 15px);
+
+
+    .post__time {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: darken($color-white, 20%);
+        font-size: 80%;
+        margin-top: 0;
+        margin-bottom: 3px;
+    }
+
+
+    .post__h {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+
+    .post__excerpt {
+        margin-top: 3px;
+        margin-bottom: 0;
+    }
+
+
+    .post__article {
+        padding-top: 0;
+
+
+        .post__h {
+            margin-top: 0;
+
+            &.\--hero {
+                color: $color-white;
+                margin-top: 0;
+            }
+        }
+
+
+        .post__share {
+            width: 50%;
+            float: left;
+            text-transform: uppercase;
+            margin: 0;
+
+            &.\--right {
+                text-align: right;
+            }
+        }
+
+
+        hr,
+        .hr {
+            border: 0;
+            border-top: 5px solid $code-background-color;
+            @include rem(margin-top, 25px);
+
+
+            &.\--large {
+                @include rem(margin-top, 36px);
+            }
+
+
+            &.\--small {
+                @include rem(margin-top, 9px);
+            }
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 0;
+        }
+
+
+        img,
+        iframe,
+        video {
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        iframe {
+            @include rem(padding, 5px 0 5px 0);
+        }
+
+    }
+
+}

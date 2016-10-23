@@ -1,23 +1,11 @@
-<div class="page__nav {% if page.url == '/index.html' %}--home{% endif %}">
-    <nav class="nav px2" role="navigation">
-        <div class="container">
-            <h1 class="nav__section --left nav__h">
-                <a href="/" title="Noah Bass">N<span>oah&nbsp;</span>B<span>ass</span></a>
-            </h1>
+<div class="nav nav--fixed">
+    <h1 class="nav__section nav__section--left nav__header">
+        <a href="/" title="Noah Bass">Noah<span> Bass</span></a>
+    </h1>
 
-            <ul class="nav__section --right list-inline">
-                {% assign pages_list = site.pages %}
-                {% assign group = 'navigation' %}
-                {% include nav_list.html %}
-            </ul>
-        </div>
-    </nav>
+    <ul class="nav__section nav__section--right nav__list">
+        {% assign pages_list = site.pages %}
+        {% assign group = 'navigation' %}
+        {% include nav_list.html %}
+    </ul>
 </div>
-
-<!--[if lt IE 9]>
-    <div class="section">
-        <div class="container">
-            <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        </div>
-    </div>
-<![endif]-->

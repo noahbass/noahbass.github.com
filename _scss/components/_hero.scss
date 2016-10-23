@@ -1,0 +1,23 @@
+.hero {
+    background-color: $color-blue;
+    padding: 25px;
+    border-radius: 4px;
+    
+    @media (min-width: $mobile-breakpoint) {
+        padding: 45px;
+    }
+    
+    .hero__header {
+        margin: 0;
+        color: $color-white;
+    }
+    
+    .hero__content {
+        color: $color-white;
+        
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+}

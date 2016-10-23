@@ -1,36 +1,15 @@
 {% include head.html %}
 
-<article class="post --article">
-    <div class="section">
-        <div class="container">
-            <p class="post__time"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %Y' }}</time></p>
-            <h1 class="post__h h1">{{ page.title }}</h1>
-        </div>
-    </div>
+<article class="post">
+    <p class="post__time">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %Y' }}</time>
+    </p>
+    
+    <h1 class="post__header">{{ page.title }}</h1>
 
-    <div class="section post__article">
-        <div class="container">
-            {{ content }}
-
-            <hr>
-
-            <div class="clearfix">
-                <p class="post__share mt0">
-                    <small><a href="//twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}&via={{ site.social.twitter }}" target="_blank" title="Share {{ page.title }} on Twitter">share on twitter</a></small>
-                </p>
-
-                <p class="post__share --right mt0">
-                    <small><a href="//github.com/noahbass/noahbass.github.com/blob/master/{{ page.path }}">edit on github</a></small>
-                </p>
-            </div>
-
-            <hr class="--small">
-
-            <div id="disqus_thread"></div>
-            <script>var disqus_shortname="nbass",disqus_identifier='{{ post.date | date: "%Y%m%d" }}',disqus_title="{{ page.title }}",disqus_url="{{ site.url }}{{ page.url }}";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();</script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-        </div>
-    </div>
+    <section class="post__content">
+        {{ content }}
+    </section>
 </article>
 
 {% include footer.html %}

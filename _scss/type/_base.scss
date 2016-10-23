@@ -1,67 +1,56 @@
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+
 html {
-    font-size: $font-size;
-    font-family: $font-family;
+    font-size: $base-font-size;
+    font-family: $paragraph-font-family;
     color: $color-black;
 
-
-    @include whenMax($break-medium) {
-        font-size: 17px;
-    }
-
-    @include when($break-large) {
+    @media (min-width: $mobile-breakpoint) {
         font-size: 18px;
     }
 }
 
-
-a {
-    color: $color-blue-light;
-    text-decoration: none;
-
-
-    &:hover {
-        border-bottom: 2px solid $color-blue-light;
-    }
-
-
-    &.color-white {
-        color: $color-white;
-
-
-        &:hover {
-            border-bottom: 2px solid $color-white;
-        }
-    }
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
 }
-
-
-small {
-    a {
-        &:hover {
-            border-bottom: 1px solid $color-blue-light;
-        }
-    }
-}
-
 
 p {
-    line-height: 1.5;
-    @include em(margin, $p-margin 0);
+    line-height: $paragraph-line-height;
 
-
-    @include when($break-large) {
+    @media (min-width: $mobile-breakpoint) {
         line-height: 1.6;
     }
 }
 
+a {
+    color: $color-blue;
 
-blockquote {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid $color-gray;
+}
+
+.list-inline {
+    list-style-type: none;
     margin: 0;
+    padding: 0;
 
-    p {
-        color: lighten($color-black, 40%);
-        font-style: italic;
-        border-left: 8px solid lighten($color-black, 40%);
-        padding: 8px 0 8px 16px;
+    li {
+        display: inline;
+        margin: 0;
+        padding: 0;
     }
 }

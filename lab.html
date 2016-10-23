@@ -6,16 +6,15 @@ group: "navigation"
 ---
 
 <section class="section">
-    <div class="container">
-        <h1 class="section__h">Lab</h1>
+    <h1 class="section__header">Lab</h1>
 
-        <p>Experiments and demos</p>
+    <p>Experiments and demos. See more at <a href="https://github.com/noahbass">github.com/noahbass</a>.</p>
 
-        {% for item in site.data.lab %}
-            <article class="post">
-                <p class="post__time"><time datetime="{{ item.date }}">{{ item.date | date: '%B %Y' }}</time></p>
-                <h2 class="h3 post__h"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></h2>
-            </article>
-        {% endfor %}
-    </div>
+    {% for item in site.data.lab %}
+        <article class="post post--list-item">
+            <p class="post__time"><time datetime="{{ item.date }}">{{ item.date | date: '%B %Y' }}</time></p>
+
+            <h2 class="post__header"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></h2>
+        </article>
+    {% endfor %}
 </section>

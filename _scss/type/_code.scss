@@ -1,7 +1,12 @@
+.highlight {
+    margin: 0;
+}
+
 code {
-    font-family: $monospace-font;
-    background-color: $code-background-color;
-    @include font-size($monospace-font-size);
+    font-family: 'Menlo', monospace;
+    background-color: #f7f7f7;
+    //@include font-size($monospace-font-size);
+    font-size: 15px;
 }
 
 
@@ -10,13 +15,15 @@ p > code {
     margin: 0;
     position: relative;
     top: -1px;
-    @include vendor(border-radius, 3px);
+    //@include vendor(border-radius, 3px);
+    border-radius: 3px;
 }
 
 
 pre {
-    background-color: $code-background-color;
-    @include rem(padding, 16px);
+    background-color: #f7f7f7;
+    //@include rem(padding, 16px);
+    padding: 16px;
     overflow: auto;
     width: 100%;
     line-height: 1.1;
@@ -29,15 +36,15 @@ pre {
 
 
     &::-webkit-scrollbar {
-        @include rem(width, $font-size/2);
-        @include rem(height, $font-size/2);
+        //@include rem(width, $font-size/2);
+        //@include rem(height, $font-size/2);
     }
 
     &::-webkit-scrollbar-track {
-        background-color: darken($code-background-color, 4%);
+        //background-color: darken($code-background-color, 4%);
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: darken($code-background-color, 10%);
+        //background-color: darken($code-background-color, 10%);
     }
 }

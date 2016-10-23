@@ -1,0 +1,67 @@
+html {
+    font-size: $font-size;
+    font-family: $font-family;
+    color: $color-black;
+
+
+    @include whenMax($break-medium) {
+        font-size: 17px;
+    }
+
+    @include when($break-large) {
+        font-size: 18px;
+    }
+}
+
+
+a {
+    color: $color-blue-light;
+    text-decoration: none;
+
+
+    &:hover {
+        border-bottom: 2px solid $color-blue-light;
+    }
+
+
+    &.color-white {
+        color: $color-white;
+
+
+        &:hover {
+            border-bottom: 2px solid $color-white;
+        }
+    }
+}
+
+
+small {
+    a {
+        &:hover {
+            border-bottom: 1px solid $color-blue-light;
+        }
+    }
+}
+
+
+p {
+    line-height: 1.5;
+    @include em(margin, $p-margin 0);
+
+
+    @include when($break-large) {
+        line-height: 1.6;
+    }
+}
+
+
+blockquote {
+    margin: 0;
+
+    p {
+        color: lighten($color-black, 40%);
+        font-style: italic;
+        border-left: 8px solid lighten($color-black, 40%);
+        padding: 8px 0 8px 16px;
+    }
+}

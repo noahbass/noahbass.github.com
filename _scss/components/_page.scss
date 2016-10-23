@@ -1,6 +1,14 @@
-.\@home {
-    body {
-        color: $color-white;
-        background-color: $color-blue-light;
+@media (min-width: $mobile-breakpoint) {
+    .page {
+        display: flex;
+    }
+
+    .page__nav {
+        width: 20%;
+    }
+
+    .page__main {
+        width: 80%;
+        margin-top: 15px;
     }
 }

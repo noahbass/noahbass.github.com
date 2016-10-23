@@ -1,43 +1,22 @@
-// color
-$color-white:      #fff;
-$color-black:      #333;
-$color-blue-light: #3498db;
-$color-blue-dark:  #2980b9;
+// Colors
+// ---
+$color-white: #fff;
+$color-black: #333;
+$color-gray:  #ccc;
+$color-blue:  #3498db;
 
 
-// fonts
-$font-family:    "Noto Sans", sans-serif;
-$heading-font:   "Lato", sans-serif;
-$heading-weight: 700;
-$font-size:      18px;
-$p-margin:       24px;
+// Fonts
+// ---
+$heading-font-weight: 700;
+$paragraph-font-weight: 400;
+$paragraph-line-height: 1.5;
 
-$h1-size: 45px;
-$h2-size: 35px;
-$h3-size: 30px;
-$h4-size: 25px;
-$h5-size: 20px;
-$h6-size: 16px;
+$base-font-size: 17px;
 
+$heading-font-family: 'Lato', sans-serif;
+$paragraph-font-family: 'Noto Sans', sans-serif;
 
-// nav
-$nav-margin: 15px;
-
-
-// code
-$code-background-color: #f7f7f7;
-$monospace-font:        "Consolas", "Menlo", monospace;
-$monospace-font-size:   15px;
-
-
-// breakpoints
-$break-small:  500px;
-$break-medium: 800px;
-$break-large:  1100px;
-
-
-// margins and paddings
-$space-1: 5px;
-$space-2: 10px;
-$space-3: 20px;
-$space-4: 40px;
+// Breakpoints
+// ---
+$mobile-breakpoint: 900px;

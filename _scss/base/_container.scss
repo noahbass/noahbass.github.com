@@ -1,5 +1,7 @@
 .container {
-    @include em(max-width, 700px, rem);
+    max-width: $mobile-breakpoint;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 8px;
+    padding-right: 8px;
 }

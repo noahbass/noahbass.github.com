@@ -2,16 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% if page.title %} {{ page.title }} // {{ site.meta.title }} {% else %}{{ site.meta.title }} // Web Developer{% endif %}</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% if page.title %} {{ page.title }} - {{ site.meta.title }} {% else %}{{ site.meta.title }} - CS Student at the University of Cincinnati{% endif %}</title>
         <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}{{ site.meta.description }}{% endif %}">
 
         {% include meta.html %}
 
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic|Lato:700">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,400i,700|Lato:700">
         <link rel="stylesheet" href="/css/styles.min.css">
     </head>
     <body>
-        {% include nav.html %}
+        <div class="container page">
+            <nav class="page__nav">
+                {% include nav.html %}
+            </nav>
 
-        <main class="page__main">
+            <main class="page__main">

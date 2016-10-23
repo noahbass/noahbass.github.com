@@ -4,27 +4,42 @@ title: Hello
 group: "navigation"
 ---
 
-<div class="@home">
-    <div class="table" id="home">
-        <section class="section --home --header --padding-top table__cell">
-            <div class="container">
-                <h1 class="h1 mt0 mb1">Noah Bass</h1>
-                <h2 class="h2 mt1 mb0">Web Developer in Cincinnati</h2>
-            </div>
-        </section>
-    </div>
-</div>
+<!-- slight background color on hero -->
+<section class="hero">
+    <h1 class="hero__header">CS Student at the University of Cincinnati</h1>
 
-<section class="section --home --footer --background-image">
-    <div class="container">
-        <p class="mt0">I am very passionate about building the modern web, creating things that people love to use, and learning, exploring, and applying new technologies and ideas.</p>
-        <p class="mb0">
-            <small>
-                <a class="color-white" href="//linkedin.com/in/{{ site.social.linkedin }}">Linkedin</a> -
-                <a class="color-white" href="//github.com/{{ site.social.github }}">GitHub</a> -
-                <a class="color-white" href="//twitter.com/{{ site.social.twitter }}">Twitter</a> -
-                <a class="color-white" href="mailto:{{ site.social.email }}">{{ site.social.email }}</a>
-            </small>
-        </p>
+    <div class="hero__content">
+        <p>Passionate about building things that people love to use and exploring new technologies. A proud part of the hacker culture and communities.</p>
+        
+        <p>Full stack web. Node.js. JavaScript. C++. Python. HTML5.</p>
+
+        <ul class="list-inline">
+            <li><a href="https://github.com/{{ site.social.github }}">GitHub</a></li> -
+            <li><a href="https://linkedin.com/in/{{ site.social.linkedin }}">Linkedin</a></li> -
+            <li><a href="https://twitter.com/{{ site.social.twitter }}">Twitter</a></li> -
+            <li><a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a></li>
+        </ul>
     </div>
+</section>
+
+<article class="post post--home">
+    {% for post in site.posts limit:1 %}
+        <p class="post__time">
+            <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+                {{ post.date | date: '%B %Y' }}
+            </time>
+        </p>
+
+        <h1 class="post__header"><a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a></h1>
+
+        <section class="post__content">
+            {{ content }}
+        </section>
+    {% endfor %}
+</article>
+
+<hr>
+
+<section>
+    <p><a href="/posts/">Read more posts</a></p>
 </section>

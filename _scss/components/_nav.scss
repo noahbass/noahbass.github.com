@@ -1,83 +1,77 @@
-.page__nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    color: $color-blue-light;
+.nav {
+    .nav__section {
+        font-family: $paragraph-font-family;
+        font-weight: $paragraph-font-weight;
+        margin: 15px 0;
+        display: inline-block;
+        font-size: 18px;
+        color: $color-black;
 
-
-    .nav {
-        .nav__section {
-            font-family: $font-family;
-            @include rem(margin, $nav-margin 0);
-
-
-            &.\--left {
-                float: left;
-                text-align: left;
-                font-weight: 400;
-
-
-                a {
-                    color: inherit;
-                }
-            }
-
-
-            &.\--right {
-                float: right;
-                text-align: right;
-
-
-                a {
-                    @include rem(margin-left, $nav-margin);
-                    color: inherit;
-                    text-decoration: none;
-
-
-                    &.active,
-                    &:hover {
-                        border-bottom: 2px solid $color-blue-light;
-                    }
-                }
-            }
-
+        @media (min-width: $mobile-breakpoint) {
+            display: block;
         }
 
+        &.nav__section--left {}
 
-        .nav__h {
-            @include font-size($font-size);
+        &.nav__section--right {
+            float: right;
 
-
-            a {
-                color: $color-white;
-                border-bottom: 0;
-            }
-
-            span {
-                display: none;
-
-                @include when($break-small) {
-                    display: inline-block;
-                }
+            @media (min-width: $mobile-breakpoint) {
+                float: none;
             }
         }
 
+        a {
+            color: $color-blue;
+        }
     }
 
+    .nav__header {
+        @media (min-width: $mobile-breakpoint) {
+            font-size: 22px;
+        }
 
-    &.\--home {
-        background-color: transparent;
-        color: $color-white;
+        a {
+            text-decoration: none;
 
+            &:hover {
+                text-decoration: underline;
+            }
+        }
 
-        .nav__section {
-            &.\--right {
+        span {
+            display: none;
 
-                a {
-                    &.active,
-                    a:hover {
-                        border-bottom-color: $color-white;
-                    }
+            @media (min-width: $mobile-breakpoint) {
+                display: inline;
+            }
+        }
+    }
+
+    .nav__list {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+
+            @media (min-width: $mobile-breakpoint) {
+                display: block;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                font-size: 18px;
+            }
+
+            a {
+                margin-left: 5px;
+                text-decoration: none;
+
+                @media (min-width: $mobile-breakpoint) {
+                    margin-left: 0;
+                }
+
+                &:hover {
+                    text-decoration: underline;
                 }
             }
         }

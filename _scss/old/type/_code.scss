@@ -1,0 +1,43 @@
+code {
+    font-family: $monospace-font;
+    background-color: $code-background-color;
+    @include font-size($monospace-font-size);
+}
+
+
+p > code {
+    padding: 5px 5px 2px;
+    margin: 0;
+    position: relative;
+    top: -1px;
+    @include vendor(border-radius, 3px);
+}
+
+
+pre {
+    background-color: $code-background-color;
+    @include rem(padding, 16px);
+    overflow: auto;
+    width: 100%;
+    line-height: 1.1;
+
+
+    pre {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    &::-webkit-scrollbar {
+        @include rem(width, $font-size/2);
+        @include rem(height, $font-size/2);
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: darken($code-background-color, 4%);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darken($code-background-color, 10%);
+    }
+}
