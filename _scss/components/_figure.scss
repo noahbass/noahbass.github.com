@@ -1,0 +1,16 @@
+.figure {
+    margin: 0;
+
+    .figure__img {
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .figure__caption {
+        color: darken($color-white, 35%);
+        font-size: $base-font-size * 0.85;
+        margin-top: 8px;
+    }
+}
