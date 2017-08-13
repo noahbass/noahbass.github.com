@@ -17,7 +17,7 @@ social:
 permalink: /posts/:title
 
 
-gems:
+plugins:
     - jekyll-sitemap
 
 
