@@ -16,7 +16,7 @@ group: "navigation"
         <article class="post post--list-item" id="{{ post.date | date: "%Y%m%d" }}">
             <p class="post__time">
                 <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
-                    {{ post.date | date: '%B %Y' }}
+                    {{ post.date | date: '%-d %B %Y' }}
                 </time>
             </p>
 

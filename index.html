@@ -10,7 +10,7 @@ group: "navigation"
 
     <div class="hero__content">
         <p>Passionate about building things that people love to use and exploring new technologies. A proud part of the hacker culture and communities.</p>
-        
+
         <p>Full stack web. Node.js. JavaScript. C++. Python. HTML5.</p>
 
         <ul class="list-inline">
@@ -26,7 +26,7 @@ group: "navigation"
     {% for post in site.posts limit:1 %}
         <p class="post__time">
             <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
-                {{ post.date | date: '%B %Y' }}
+                {{ post.date | date: '%-d %B %Y' }}
             </time>
         </p>
 

@@ -2,9 +2,9 @@
 
 <article class="post">
     <p class="post__time">
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %Y' }}</time>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>
     </p>
-    
+
     <h1 class="post__header">{{ page.title }}</h1>
 
     <section class="post__content">
