@@ -1,13 +1,11 @@
 <figure class="figure">
-    {% if include.caption %}
-        {% if include.url2x %}
-            <img class="figure__img" srcset="{{ include.url }} 1x, {{ include.url2x }} 2x" src="{{ include.url }}" alt="{{ include.caption }}">
-        {% else %}
-            <img class="figure__img" src="{{ include.url }}" alt="{{ include.caption }}">
-        {% endif %}
-
-        <figcaption class="figure__caption">{{ include.caption }}</figcaption>
+    {% if include.url2x %}
+        <img class="figure__img" srcset="{{ include.url }} 1x, {{ include.url2x }} 2x" src="{{ include.url }}">
     {% else %}
         <img class="figure__img" src="{{ include.url }}">
+    {% endif %}
+
+    {% if include.caption %}
+        <figcaption class="figure__caption">{{ include.caption }}</figcaption>
     {% endif %}
 </figure>

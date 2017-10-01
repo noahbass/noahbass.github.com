@@ -8,7 +8,7 @@
 <meta property="og:url" content="http://noahbass.com/">
 <meta property="og:site_name" content="Noah Bass">
 <meta property="og:type" content="website">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}{{ site.meta.description }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.meta.description }}{% endif %}">
 {% if page.path contains '_posts' %}
     {% if page.img %}
         <meta property="og:image" content="{{ page.img }}">
@@ -20,12 +20,10 @@
 <meta name="twitter:domain" content="noahbass.com">
 <meta name="twitter:creator" content="@{{ site.social.twitter }}">
 <meta name="twitter:title" content="{{ page.title }}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}{{ site.meta.description }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.meta.description }}{% endif %}">
 {% if page.path contains '_posts' %}
     {% if page.img %}
         <meta name="twitter:image:src" content="{{ page.img }}">
-    {% else %}
-        <meta name="twitter:image" content="/logo.png">
     {% endif %}
 {% endif %}
 

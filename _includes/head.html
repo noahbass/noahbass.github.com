@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{% if page.title %} {{ page.title }} - {{ site.meta.title }} {% else %}{{ site.meta.title }} - CS Student at the University of Cincinnati{% endif %}</title>
-        <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}{{ site.meta.description }}{% endif %}">
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.meta.description }}{% endif %}">
 
         {% include meta.html %}
 
