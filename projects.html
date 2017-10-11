@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Lab
-permalink: /lab/
+title: Projects
+permalink: /projects/
 group: "navigation"
 ---
 
 <section class="section">
-    <h1 class="section__header">Lab</h1>
+    <h1 class="section__header">Projects</h1>
 
-    <p>Experiments and demos. See more at <a href="https://github.com/noahbass">github.com/noahbass</a>.</p>
+    <p>Projects, experiments, and demos. See more at <a href="https://github.com/noahbass">github.com/noahbass</a>.</p>
 
-    {% for item in site.data.lab %}
+    {% for item in site.data.projects %}
         <article class="post post--list-item">
             <p class="post__time"><time datetime="{{ item.date }}">{{ item.date | date: '%B %Y' }}</time></p>
 
