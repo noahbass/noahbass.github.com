@@ -9,9 +9,9 @@ group: "navigation"
     <h1 class="hero__header">CS Student at the University of Cincinnati</h1>
 
     <div class="hero__content">
-        <p>Passionate about building things that people love to use and exploring new technologies. A proud part of the hacker culture and communities.</p>
+        <p>Exec at <a href="http://revolutionuc.com/" target="_blank">RevolutionUC</a> and <a href="http://acmatuc.org/" target="_blank">ACM@UC</a>. Passionate about building things that people love to use and exploring new technologies. Proud to be a part of the hacker culture and community.</p>
 
-        <p>Full stack web. Node.js. JavaScript. C++. Python. HTML5.</p>
+        <p>Node.js. JavaScript. C++. Python. Web development.</p>
 
         <ul class="list-inline">
             <li><a href="https://github.com/{{ site.social.github }}">GitHub</a></li> -
@@ -33,7 +33,7 @@ group: "navigation"
         <h1 class="post__header"><a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a></h1>
 
         <section class="post__content">
-            {{ content }}
+            {{ post.content }}
         </section>
     {% endfor %}
 </article>
