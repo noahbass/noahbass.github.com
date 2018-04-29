@@ -6,12 +6,12 @@
 
 
 html {
-    font-size: $base-font-size;
+    font-size: $mobile-base-font-size;
     font-family: $paragraph-font-family;
     color: $color-black;
 
     @media (min-width: $mobile-breakpoint) {
-        font-size: 18px;
+        font-size: $base-font-size;
     }
 }
 
@@ -21,10 +21,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    line-height: $paragraph-line-height;
+    line-height: $mobile-paragraph-line-height;
 
     @media (min-width: $mobile-breakpoint) {
-        line-height: 1.6;
+        line-height: $paragraph-line-height;
     }
 }
 
