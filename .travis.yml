@@ -1,16 +1,25 @@
 language: ruby
+# cache: bundler
 
-cache: bundler
-
-rvm: 2.4.1
-
-before_script:
-  - gem install mdl
-  - gem install awesome_bot
+install:
+  - nvm install 10
+  - nvm use 10 # use nodejs v10
+  - npm install -g netlify-cli
+  - gem install mdl awesome_bot jekyll jekyll-sitemap
 
 script:
-  - mdl _posts/posts/ --style relaxed # lint markdown (docs -> github.com/markdownlint/markdownlint)
+  # - mdl _posts/posts/ --style relaxed # lint markdown (docs -> github.com/markdownlint/markdownlint)
   - awesome_bot _posts/posts/* --allow-dupe --allow-redirect --white-list test.dev # lint links (docs -> github.com/dkhamsing/awesome_bot)
+  - jekyll build # builds to _site directory
+
+deploy:
+  provider: script
+  script: netlify deploy --prod --dir=./_site # deploy only the _site directory
+  skip_cleanup: true
+  on:
+    branch: master
 
 notifications:
-  email: false
+  email:
+    on_success: change
+    on_failure: always
