@@ -1,18 +1,26 @@
+- title: serverless-compute-examples
+  link: https://github.com/ACMatUC/serverless-compute-examples
+  date: 2019-01-17
+
+- title: live-commits
+  link: https://github.com/noahbass/live-commits
+  date: 2018-12-02
+
 - title: Interactive ac-3
   link: https://github.com/noahbass/ac-3
   date: 2018-10-23
 
-- title: git-multi-email
+- title: mailchimp-slack-list-updates
+  link: https://github.com/noahbass/mailchimp-slack-list-updates
+  date: 2018-01-26
+
+- title: serverless-haskell-research
   link: https://github.com/noahbass/git-multi-email
+  date: 2017-12-10
+
+- title: git-multi-email
+  link: https://github.com/noahbass/serverless-haskell-research
   date: 2017-09-15
-
-- title: cs2028c notes
-  link: https://github.com/noahbass/cs2028c
-  date: 2017-04-11
-
-- title: cs2021 notes
-  link: https://github.com/noahbass/cs2021
-  date: 2017-04-11
 
 - title: soccer-bot
   link: https://github.com/noahbass/soccer-bot
