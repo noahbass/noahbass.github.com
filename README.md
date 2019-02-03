@@ -1,5 +1,5 @@
-# [noahbass.github.com](https://noahbass.github.com/)
+# [noahbass.com](https://noahbass.com/)
 
-[![Build Status](https://travis-ci.org/noahbass/noahbass.github.com.svg?branch=master)](https://travis-ci.org/noahbass/noahbass.github.com)
+[![Build Status](https://travis-ci.org/noahbass/website.svg?branch=master)](https://travis-ci.org/noahbass/website)
 
 > Personal website and blog :pencil2:
