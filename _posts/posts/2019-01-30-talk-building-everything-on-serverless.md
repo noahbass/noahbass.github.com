@@ -18,4 +18,4 @@ Video and slides:
 
 <br>
 
-<script async class="speakerdeck-embed" data-id="3b0fc8267ef0468ba3ae8ac9bfacdf79" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+<iframe src="//speakerdeck.com/player/3b0fc8267ef0468ba3ae8ac9bfacdf79" height="450" width="100%" allowtransparency="true" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"></iframe>
