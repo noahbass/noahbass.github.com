@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Web Performance and Optimization Talk at IEEE@UC"
+title: "Talk: Web Performance and Optimization at IEEE@UC"
 img: https://assets.noahbass.com/blog/2020-03-05-talk-web-performance-optimization-ieee/img.jpg
 ---
 
-In March, I [spoke about web performance and optimization](https://www.youtube.com/embed/THNTOPjCv20) in a survey talk at [IEEE@UC](http://ieee.uc.edu/) alongside [Omar Alsayed](https://github.com/omaralsayed), [Kristian Snyder](https://github.com/snyderks), and [Isiah Lloyd](https://github.com/isiah-lloyd). See the video and slides below.
+In March, I [spoke about web performance and optimization](https://www.youtube.com/watch?v=THNTOPjCv20) in a survey talk at [IEEE@UC](http://ieee.uc.edu/) alongside [Omar Alsayed](https://github.com/omaralsayed), [Kristian Snyder](https://github.com/snyderks), and [Isiah Lloyd](https://github.com/isiah-lloyd). See the video and slides below.
 
 We covered a survey of web topics, from image optimization and source code minification to content delivery networks:
 
