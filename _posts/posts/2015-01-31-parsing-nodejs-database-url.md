@@ -4,7 +4,7 @@ title: Parsing a Node.js Database URL
 description: 'Given a database url (maybe in Heroku), parse that url and chop it into parts.'
 ---
 
-In a service like Heroku, you are given a database url such as `postgres://username:password@localhost/my_db`. But what if you need to chop this up to get just the scheme, username, etc.?
+In a service like Heroku, you are given a database url such as `postgres://username:password@localhost:5432/my_db`. But what if you need to chop this up to get just the scheme, username, etc.?
 
 Node.js has a built in module called `url` that has a `parse` method. You can try it out with a database url:
 
@@ -36,44 +36,52 @@ We can use that as a reference for chopping everything up in the database url. F
 
 {% highlight js %}
 // taking the length minus one to remove the colon
-var scheme = db_url.protocol.substr(0, db_url.protocol.length - 1);
+const scheme = db_url.protocol.substr(0, db_url.protocol.length - 1)
 {% endhighlight %}
 
 The username:
 
 {% highlight js %}
 // take only the username from auth
-var user = db_url.auth.substr(0, db_url.auth.indexOf(':'));
+const user = db_url.auth.substr(0, db_url.auth.indexOf(':'))
 {% endhighlight %}
 
 The password:
 
 {% highlight js %}
 // take only the password from auth
-var pass = db_url.auth.substr(db_url.auth.indexOf(':') + 1, db_url.auth.length);
+const pass = db_url.auth.substr(db_url.auth.indexOf(':') + 1, db_url.auth.length)
 {% endhighlight %}
 
 The host:
 
 {% highlight js %}
-var host = db_url.host;
+const host = db_url.hostname
+{% endhighlight %}
+
+The port:
+
+{% highlight js %}
+const port = db_url.port
 {% endhighlight %}
 
 And finally, the db name:
 
 {% highlight js %}
-var db = db_url.path;
+const db = db_url.path.slice(1)
 {% endhighlight %}
 
 Completed it will look something like this:
 
 {% highlight js %}
-var url = require('url');
-var db_url = url.parse(process.env.DATABASE_URL);
+const url = require('url')
+const DATABASE_URL = process.env.DATABASE_URL || 'postgres://username:password@localhost:5432/my_db'
 
-var scheme = db_url.protocol.substr(0, db_url.protocol.length - 1);
-var user   = db_url.auth.substr(0, db_url.auth.indexOf(':'));
-var pass   = db_url.auth.substr(db_url.auth.indexOf(':') + 1, db_url.auth.length);
-var host   = db_url.host;
-var db     = db_url.path;
+const db_url = url.parse(DATABASE_URL)
+const scheme = db_url.protocol.substr(0, db_url.protocol.length - 1)
+const user   = db_url.auth.substr(0, db_url.auth.indexOf(':'))
+const pass   = db_url.auth.substr(db_url.auth.indexOf(':') + 1, db_url.auth.length)
+const host   = db_url.hostname
+const port   = db_url.port
+const db     = db_url.path.slice(1)
 {% endhighlight %}
