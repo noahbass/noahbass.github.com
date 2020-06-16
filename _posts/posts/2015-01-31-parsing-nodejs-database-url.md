@@ -19,16 +19,16 @@ Here you can see an output of keys and values that we need:
 {
     protocol: 'postgres:',
     slashes: true,
-    auth: 'user:pass',
-    host: 'localhost',
-    port: null,
+    auth: 'username:password',
+    host: 'localhost:5432',
+    port: '5432',
     hostname: 'localhost',
     hash: null,
     search: null,
     query: null,
     pathname: '/my_db',
     path: '/my_db',
-    href: 'postgres://user:pass@localhost/my_db'
+    href: 'postgres://username:password@localhost:5432/my_db'
 }
 {% endhighlight %}
 
